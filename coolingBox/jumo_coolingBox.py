@@ -92,7 +92,7 @@ class jumo_coolingBox(coolingBox):
 
     def final_heating(self):
         print 'start final heating'
-        self.set_setpoint(20)
+        self.set_setpoint(27)
         self.heating()
         self.status = self.FINAL_HEATING
 

@@ -10,10 +10,10 @@ defaultParameters: /home/fnalpix2/ShareTestResults/DefaultConfig
 scriptDir: <!Directories|baseDir!>/analysisClient/scripts/
 
 [TestboardAddress]
-TB0: DTB_WRPQJV
-TB1: DTB_WRE8QZ
-TB2: DTB_WRBNTI
-TB3: DTB_WRPPWX
+TB0: DTB_WRPPWX
+TB1: DTB_WRBNTI
+TB2: DTB_WRE8QZ
+TB3: DTB_WRPQJV
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
@@ -55,7 +55,7 @@ port: /dev/ttyUSB0
 
 [psiClient]
 #psiVersion: /usr/local/bin/psi46expert
-psiVersion: /home/fnalpix2/pxar/bin/pXar
+psiVersion: /home/fnalpix2/pxar_stupak/bin/pXar
 
 #[Transfer]
 #host: cmspixel.pi.infn.it
