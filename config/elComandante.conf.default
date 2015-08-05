@@ -3,23 +3,23 @@ baseDir:  ../
 testDefinitions: $configDir$/tests/
 moduleDB: <!Directories|baseDir!>/moduleDB/
 subserverDir: <!Directories|baseDir!>/subserverDATA/
-dataDir:/home/fnalpix2/ShareTestResults/
+dataDir:/home/fnalpix2/ShareTestResults/elComandante
 jumoDir: <!Directories|baseDir!>/coolingBox/
 keithleyDir: <!Directories|baseDir!>/keithleyClient/
 defaultParameters: /home/fnalpix2/ShareTestResults/DefaultConfig
 scriptDir: <!Directories|baseDir!>/analysisClient/scripts/
 
 [TestboardAddress]
-TB0: DTB_WRPPWX
+TB0: DTB_WS6U7R     #WRMJGK
 TB1: DTB_WRBNTI
 TB2: DTB_WRE8QZ
 TB3: DTB_WRPQJV
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
-Full: defaultParametersModule
-MLL922: M_LL_922
+Full: defaultParametersModule_TBM08b_V21respin
 
+MLL922: M_LL_922
 FR902: M_FR_902
 FL922: M_FL_922
 CR913: M_CR_913
@@ -34,12 +34,13 @@ xraySubscription: /xray
 analysisSubscription: /analysis
 
 [jumoClient]
-port: /dev/ttyUSB1
+#port: /dev/serial/by-id/usb-FTDI_USB__-__Serial-if00-port0
+port: /dev/ttyUSBJumo
 programName: coolingBoxClient.py
 
 [keithleyClient]
-port: /dev/ttyUSB0
-#port: /dev/ttyUSB1
+#port: /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0
+port: /dev/ttyUSBKeithley
 
 #[lowVoltageClient]
 #lowVoltageType: yoctorelay
@@ -55,7 +56,7 @@ port: /dev/ttyUSB0
 
 [psiClient]
 #psiVersion: /usr/local/bin/psi46expert
-psiVersion: /home/fnalpix2/pxar_stupak/bin/pXar
+psiVersion: /home/fnalpix2/pxar/bin/pXar
 
 #[Transfer]
 #host: cmspixel.pi.infn.it

@@ -24,7 +24,7 @@ nCycles = 5
 [IV]
 Start = -0
 Stop = -600
-Step = 5
+Step = 10
 Delay = 3
 
 [LeakageCurrent]
@@ -92,5 +92,5 @@ Test = TESTS
 [OperationDetails]
 Hostname = fnalpix2-Inspiron-660
 TestCenter = FNAL002
-Operator = John
+Operator = NOBODY
 
