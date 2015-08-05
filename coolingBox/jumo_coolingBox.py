@@ -20,7 +20,7 @@ class jumo_coolingBox(coolingBox):
         self.status = self.UNKNOWN
         self.cycles = -1
         self.reachedSetpointTime = time.time()*10
-        self.timeUntillStable = 120
+        self.timeUntillStable = 30
         self.isFake = False
         self.last_measurement = 0
         self.measurement_distance = 1
@@ -92,7 +92,13 @@ class jumo_coolingBox(coolingBox):
 
     def final_heating(self):
         print 'start final heating'
-        self.set_setpoint(20)
+
+        self.set_setpoint(-9999)
+        self.flushing()
+        while self.get_temperature()<0:
+            time.sleep(5)
+
+        self.set_setpoint(27)
         self.heating()
         self.status = self.FINAL_HEATING
 
@@ -205,7 +211,7 @@ class jumo_coolingBox(coolingBox):
             sys.stdout.flush()
             return
         if self.status == self.FINAL_HEATING:
-            if temp > 17:
+            if temp > 27:
                 self.stop_controlling()
             log_message += 'Stop Controlling'
             sys.stdout.write('\r'+' '*self.buffer_length)
@@ -217,7 +223,7 @@ class jumo_coolingBox(coolingBox):
             #self.deltaT_Max:
             self.cooling()
             log_message += 'Cooling'
-        elif self.setpoint - temp > self.deltaT_Max:
+        elif self.setpoint - temp > self.deltaT_Max and abs( self.setpoint - temp) > self.deltaT_Max:
             self.heating()
             log_message += 'Heating'
         log_message += '@ {setpoint:+5.1f} degC \t'.format(setpoint=self.setpoint)

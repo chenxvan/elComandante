@@ -3,26 +3,26 @@ baseDir:  ../
 testDefinitions: $configDir$/tests/
 moduleDB: <!Directories|baseDir!>/moduleDB/
 subserverDir: <!Directories|baseDir!>/subserverDATA/
-dataDir:<!Directories|baseDir!>/DATA/
+dataDir:/home/fnalpix2/ShareTestResults/elComandante
 jumoDir: <!Directories|baseDir!>/coolingBox/
 keithleyDir: <!Directories|baseDir!>/keithleyClient/
-defaultParameters: /home/vtavolar/Documents/psi46test/pxar/data/
+defaultParameters: /home/fnalpix2/ShareTestResults/DefaultConfig
 scriptDir: <!Directories|baseDir!>/analysisClient/scripts/
 
-
 [TestboardAddress]
-#TB0: DPE00SPH
-TB0: DTB_WS6UZO
-#TB0: DPCDKAPA
-#TB0: DPCDKAPA
-TB1: DPE00T0D
-TB2: DPE00IUD
-TB3: DPE00J4X
-#TB3: DPE00J72
+TB0: DTB_WS6U7R     #WRMJGK
+TB1: DTB_WRBNTI
+TB2: DTB_WRE8QZ
+TB3: DTB_WRPQJV
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
-Full: defaultParametersModule
+Full: defaultParametersModule_TBM08b_V21respin
+
+MLL922: M_LL_922
+FR902: M_FR_902
+FL922: M_FL_922
+CR913: M_CR_913
 
 [subsystem]
 Ziel: 127.0.0.1
@@ -34,36 +34,37 @@ xraySubscription: /xray
 analysisSubscription: /analysis
 
 [jumoClient]
-port: /dev/ttyJUMO
+#port: /dev/serial/by-id/usb-FTDI_USB__-__Serial-if00-port0
+port: /dev/ttyUSBJumo
 programName: coolingBoxClient.py
 
 [keithleyClient]
-#port: /dev/ttyUSB0
-port: /dev/ttyUSB1
+#port: /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0
+port: /dev/ttyUSBKeithley
 
-[lowVoltageClient]
-lowVoltageType: yoctorelay
+#[lowVoltageClient]
+#lowVoltageType: yoctorelay
 
-[xrayClient]
-xrayDevice: /dev/ttyF0
-xrayType: id3003
-xrfDevice: /dev/ttyF1
-xrfType: zaber
-xrfTargets: Fe:0,Cu:25320,Mo:50640,Ag:75960,Sn:101280,Ba:126600
-turnOffHV: False
-beamOffBetweenTests: False
+#[xrayClient]
+#xrayDevice: /dev/ttyF0
+#xrayType: id3003
+#xrfDevice: /dev/ttyF1
+#xrfType: zaber
+#xrfTargets: Fe:0,Cu:25320,Mo:50640,Ag:75960,Sn:101280,Ba:126600
+#turnOffHV: False
+#beamOffBetweenTests: False
 
 [psiClient]
 #psiVersion: /usr/local/bin/psi46expert
-psiVersion: /home/vtavolar/Documents/psi46test/pxar/bin/pXar
+psiVersion: /home/fnalpix2/pxar/bin/pXar
 
-[Transfer]
-host: cmspixel.pi.infn.it
-port: 23481
-destination: /home/eth/dropbox
-user: eth
+#[Transfer]
+#host: cmspixel.pi.infn.it
+#port: 23481
+#destination: /home/eth/dropbox
+#user: eth
 #host: snickers.ethz.ch
 #port: 9922
 #destination: /data/cooling-box/DATA
 #user: bachmair
-checkForTars: False
+#checkForTars: False

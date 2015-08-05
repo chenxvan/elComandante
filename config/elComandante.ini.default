@@ -1,100 +1,96 @@
 [Modules]
-TB0: M0696
-TB1: M1148
-TB2: M1148
-TB3: M3476
+TB0 = MODULE0
+TB1 = MODULE1
+TB2 = MODULE2
+TB3 = MODULE3
 
 [ModuleType]
-TB0: Roc
-TB1: Full
-TB2: Full
-TB3: Full
+TB0 = Full
+TB1 = Full
+TB2 = Full
+TB3 = Full
 
 [TestboardUse]
-TB0: False
-TB1: True
-TB2: False
-TB3: False
+TB0 = USEM0
+TB1 = USEM1
+TB2 = USEM2
+TB3 = USEM3
 
 [Cycle]
-highTemp: 17
-lowTemp:  15
-nCycles:  2
+highTemp = 17
+lowTemp = -20
+nCycles = 5
 
 [IV]
-Start: 0
-Stop: -100
-Step: 10
-Delay: 2
+Start = -0
+Stop = -600
+Step = 10
+Delay = 3
 
 [LeakageCurrent]
-Duration: 1200 
+Duration = 1200
 
 [Keithley]
-KeithleyUse: False
+KeithleyUse = True
 BiasVoltage = -150
 
 [LowVoltage]
-LowVoltageUse: False
+LowVoltageUse = False
 
 [CoolingBox]
-CoolingBoxUse: False
+CoolingBoxUse = True
 
 [Xray]
-XrayUse: False
+XrayUse = False
 
 [Environment Xrf]
-Temperature: 17
-XrayVoltage: 30
-XrayCurrent: 30
-XrayTarget: Mo
+Temperature = 17
+XrayVoltage = 30
+XrayCurrent = 30
+XrayTarget = Mo
 
 [Environment Mo]
-Temperature: <!Environment Xrf|Temperature!>
-XrayVoltage: <!Environment Xrf|XrayVoltage!>
-XrayCurrent: <!Environment Xrf|XrayCurrent!>
-XrayTarget: Mo
+Temperature = <!Environment Xrf|Temperature!>
+XrayVoltage = <!Environment Xrf|XrayVoltage!>
+XrayCurrent = <!Environment Xrf|XrayCurrent!>
+XrayTarget = Mo
 
 [Environment Ag]
-Temperature: <!Environment Xrf|Temperature!>
-XrayVoltage: <!Environment Xrf|XrayVoltage!>
-XrayCurrent: <!Environment Xrf|XrayCurrent!>
-XrayTarget: Ag
+Temperature = <!Environment Xrf|Temperature!>
+XrayVoltage = <!Environment Xrf|XrayVoltage!>
+XrayCurrent = <!Environment Xrf|XrayCurrent!>
+XrayTarget = Ag
 
 [Environment Ba]
-Temperature: <!Environment Xrf|Temperature!>
-XrayVoltage: <!Environment Xrf|XrayVoltage!>
-XrayCurrent: <!Environment Xrf|XrayCurrent!>
-XrayTarget: Ba
+Temperature = <!Environment Xrf|Temperature!>
+XrayVoltage = <!Environment Xrf|XrayVoltage!>
+XrayCurrent = <!Environment Xrf|XrayCurrent!>
+XrayTarget = Ba
 
 [Test Trim]
-testParameters: TrimVcal=80
+testParameters = TrimVcal=40
 
 [Analysis VcalCalibrationStepAnalysisMo]
-command: XrayThresholdScanAnalysis --output analysis_XrayThresholdScanMo.root *_Mo/commander_VcalCalibrationStep.root
+command = XrayThresholdScanAnalysis --output analysis_XrayThresholdScanMo.root *_Mo/commander_VcalCalibrationStep.root
 
 [Analysis VcalCalibrationStepAnalysisAg]
-command: XrayThresholdScanAnalysis --output analysis_XrayThresholdScanAg.root *_Ag/commander_VcalCalibrationStep.root
+command = XrayThresholdScanAnalysis --output analysis_XrayThresholdScanAg.root *_Ag/commander_VcalCalibrationStep.root
 
 [Analysis VcalCalibrationStepAnalysisBa]
-command: XrayThresholdScanAnalysis --output analysis_XrayThresholdScanBa.root *_Ba/commander_VcalCalibrationStep.root
+command = XrayThresholdScanAnalysis --output analysis_XrayThresholdScanBa.root *_Ba/commander_VcalCalibrationStep.root
 
 [Analysis VcalVsThresholdAnalysis]
-command: VcalVsThresholdAnalysis --output analysis_VcalVsThreshold.root *VcalVsThreshold_*
+command = VcalVsThresholdAnalysis --output analysis_VcalVsThreshold.root *VcalVsThreshold_*
 
 [Analysis VcalCalibrationAnalysis]
-command: VcalCalibration --targets 17.49:22.16:32.19 --output VcalCalibration.root analysis_VcalVsThreshold.root analysis_XrayThresholdScanMo.root analysis_XrayThresholdScanAg.root analysis_XrayThresholdScanBa.root
+command = VcalCalibration --targets 17.49:22.16:32.19 --output VcalCalibration.root analysis_VcalVsThreshold.root analysis_XrayThresholdScanMo.root analysis_XrayThresholdScanAg.root analysis_XrayThresholdScanBa.root
 
 [Tests]
-TestDescription: IVtest
-#FullQualification
-#Test: Pretest>Trim
-#Test: Pretest
-Test: powercycle,IV@17,IV@16,IV@17
-#,IV@16
+TestDescription = ElComandanteTest
+Test = TESTS
 
-#Test: IV@17,Fulltest@17,IV@17
-#Test: Pretest@17,Fulltest@-10,IV@-10,Cycle,Fulltest@17,IV@17
-#Test: Pretest>{VcalCalibrationStep@Mo,VcalCalibrationStep@Ag,VcalCalibrationStep@Ba,VcalVsThreshold@17},VcalCalibrationStepAnalysisMo,VcalCalibrationStepAnalysisAg,VcalCalibrationStepAnalysisBa,VcalVsThresholdAnalysis,VcalCalibrationAnalysis
-#,Pretest@-10
-#,Cycle,Pretest@17
+[OperationDetails]
+Hostname = fnalpix2-Inspiron-660
+TestCenter = FNAL002
+Operator = NOBODY
+

@@ -627,7 +627,6 @@ class keithleyInterface:
         self.setImmidiateVoltage(self.immidiateVoltage)
         self.clearErrorQueue()
         self.setComplianceAbortLevel('LATE')
-#        self.setComplianceAbortLevel('NEVER')
         time.sleep(1);
 
     def identify(self):

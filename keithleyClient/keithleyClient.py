@@ -11,8 +11,6 @@ import os
 #import serial
 import signal
 from time import sleep
-from threading import Timer
-
 ON = 1
 OFF = 0
 End = False
@@ -30,7 +28,6 @@ nSweeps = 1
 delay =.1
 maxSweepTries=1
 doingSweep = False
-do_leakage_current_measurement = False
 
 defSerialPort = '/dev/tty.usbserial-FTG7MJTY'
 serialPort = defSerialPort
@@ -112,7 +109,6 @@ keithley.setOutput(OFF)
 #Logger << 'status:%s'%keithley.getOutputStatus()
 
 def readCurrentIV():
-    global do_leakage_current_measurement
     global client
     global keithley
     if keithley.getOutputStatus():
@@ -522,6 +518,8 @@ def analysePacket(coms,typ,msg):
     elif coms[0]=='K':
         command = ":".join(map(str, coms[1:]))+' '+msg
         Logger << 'send command to keithley: '
+        Logger << command
+        Logger << msg
         keithley.write(command)
     elif coms[0].lower().startswith('exit') and typ != 'a':
         client.closeConnection()
@@ -553,7 +551,12 @@ while client.anzahl_threads > 0 and End == False and client.isClosed == False:
         dataOut = '%s\n'%packet.Print()
         if command.find(':DOSWEEP')!=-1:
             sweep()
-        if len(coms)>0:
+        elif coms[0]=='K':
+            cmd = data[2:]
+            Logger << 'send command to keithley: '
+            Logger << cmd
+            keithley.write(cmd)
+        elif len(coms)>0:
             analysePacket(coms,typ,msg)
         else:
             keithley.write(command)

@@ -12,7 +12,7 @@ class coolingBox():
     def __init__(self):
         self.setpoint = -9999
         self.maxHumidity = 40
-        self.deltaT_Max = .5
+        self.deltaT_Max = 1.5
         self.temperature_safty_margin = 1
         self.checkHumidity = True
         self.cycleLow = -10

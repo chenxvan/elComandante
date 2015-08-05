@@ -221,7 +221,6 @@ def analysePacket(packet):
         if coms[0].startswith('exit'):
             exitProg()
             return
-            
     Logger << 'unknown command: %s, %s'%(coms, msg) 
 
 

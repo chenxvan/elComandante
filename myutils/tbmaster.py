@@ -178,7 +178,7 @@ class TBmaster(object):
             trimParameters = ''
             if self.trimVcal >= 0:
                 trimParameters = '-T %i'%self.trimVcal
-            executestr = 'cat %(testfile)s | %(psiVersion)s -d %(dir)s %(trim)s -r %(rootfilename)s.root -L %(logIDString)s'%{'testfile' : whichTest, 'psiVersion' : self.psiVersion, 'dir' : dir, 'rootfilename' : fname, 'trim' : trimParameters, 'logIDString' : logIDString} 
+            executestr = 'cat %(testfile)s | %(psiVersion)s -d %(dir)s -v DEBUG %(trim)s -r %(rootfilename)s.root -L %(logIDString)s'%{'testfile' : whichTest, 'psiVersion' : self.psiVersion, 'dir' : dir, 'rootfilename' : fname, 'trim' : trimParameters, 'logIDString' : logIDString} 
         else:
             executestr='%s -dir %s -f %s -r %s.root -log %s.log'%(self.psiVersion,dir,whichTest,fname,fname)
         self.LogFile = "%s/%s.log"%(dir, fname)
