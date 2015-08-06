@@ -90,7 +90,7 @@ TestDescription = ElComandanteTest
 Test = TESTS
 
 [OperationDetails]
-Hostname = fnalpix2-Inspiron-660
-TestCenter = FNAL002
-Operator = NOBODY
+Hostname = HOSTNAME
+TestCenter = TESTCENTER
+Operator = OPERATOR
 

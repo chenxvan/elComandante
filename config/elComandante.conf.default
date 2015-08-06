@@ -1,13 +1,13 @@
 [Directories]
-baseDir:  ../
+baseDir:  ../../
 testDefinitions: $configDir$/tests/
-moduleDB: <!Directories|baseDir!>/moduleDB/
-subserverDir: <!Directories|baseDir!>/subserverDATA/
-dataDir:/home/fnalpix2/ShareTestResults/elComandante
-jumoDir: <!Directories|baseDir!>/coolingBox/
-keithleyDir: <!Directories|baseDir!>/keithleyClient/
-defaultParameters: /home/fnalpix2/ShareTestResults/DefaultConfig
-scriptDir: <!Directories|baseDir!>/analysisClient/scripts/
+moduleDB: <!Directories|baseDir!>/elComandante/moduleDB/
+subserverDir: <!Directories|baseDir!>/elComandante/subserverDATA/
+dataDir: <!Directories|baseDir!>/ShareTestResults/elComandante
+jumoDir: <!Directories|baseDir!>/elComandante/coolingBox/
+keithleyDir: <!Directories|baseDir!>/elComandante/keithleyClient/
+defaultParameters: <!Directories|baseDir!>/ShareTestResults/DefaultConfig
+scriptDir: <!Directories|baseDir!>/elComandante/analysisClient/scripts/
 
 [TestboardAddress]
 TB0: DTB_WS6U7R     #WRMJGK
@@ -56,7 +56,7 @@ port: /dev/ttyUSBKeithley
 
 [psiClient]
 #psiVersion: /usr/local/bin/psi46expert
-psiVersion: /home/fnalpix2/pxar/bin/pXar
+psiVersion: <!Directories|baseDir!>/pxar/bin/pXar
 
 #[Transfer]
 #host: cmspixel.pi.infn.it
