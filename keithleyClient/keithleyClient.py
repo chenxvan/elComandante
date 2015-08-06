@@ -28,6 +28,7 @@ nSweeps = 1
 delay =.1
 maxSweepTries=1
 doingSweep = False
+do_leakage_current_measurement = False
 
 defSerialPort = '/dev/tty.usbserial-FTG7MJTY'
 serialPort = defSerialPort
