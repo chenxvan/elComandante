@@ -10,10 +10,13 @@ defaultParameters: <!Directories|baseDir!>/ShareTestResults/DefaultConfig
 scriptDir: <!Directories|baseDir!>/elComandante/analysisClient/scripts/
 
 [TestboardAddress]
-TB0: DTB_WS6U7R     #WRMJGK
-TB1: DTB_WRBNTI
-TB2: DTB_WRE8QZ
-TB3: DTB_WRPQJV
+#Test Stand 1
+TB0: DTB_WREEXI
+TB1: DTB_WS6U7R
+TB2: DTB_WRPQJV
+TB3: DTB_WRMJGK
+
+#Test Stand 2
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
