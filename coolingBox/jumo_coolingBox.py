@@ -246,7 +246,7 @@ class jumo_coolingBox(coolingBox):
             else:
                 log_message += 'Stable'
         sys.stdout.write('\r'+' '*self.buffer_length)
-        sys.stdout.write(log_message)
+        sys.stdout.write(log_message+'\n')
         sys.stdout.flush()
 
     def is_stable(self):
