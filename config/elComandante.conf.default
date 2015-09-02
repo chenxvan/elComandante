@@ -11,21 +11,20 @@ scriptDir: <!Directories|baseDir!>/elComandante/analysisClient/scripts/
 
 [TestboardAddress]
 #Test Stand 1
-TB0: DTB_WREEXI
-TB1: DTB_WS6U7R
-TB2: DTB_WRPQJV
-TB3: DTB_WRMJGK
+#TB0: DTB_WRMJGK
+#TB1: DTB_WS6U7R
+#TB2: DTB_WRPQJV
+#TB3: DTB_WRMJGK
 
 #Test Stand 2
+TB0: WRMJGK
+TB1: WRBNTI
+TB2: WS6U7R
+TB3: WRPQJV
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
 Full: defaultParametersModule_TBM08b_V21respin
-
-MLL922: M_LL_922
-FR902: M_FR_902
-FL922: M_FL_922
-CR913: M_CR_913
 
 [subsystem]
 Ziel: 127.0.0.1
@@ -37,12 +36,10 @@ xraySubscription: /xray
 analysisSubscription: /analysis
 
 [jumoClient]
-#port: /dev/serial/by-id/usb-FTDI_USB__-__Serial-if00-port0
 port: /dev/ttyUSBJumo
 programName: coolingBoxClient.py
 
 [keithleyClient]
-#port: /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0
 port: /dev/ttyUSBKeithley
 
 #[lowVoltageClient]
