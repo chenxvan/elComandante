@@ -3,7 +3,8 @@ baseDir:  ../../
 testDefinitions: $configDir$/tests/
 moduleDB: <!Directories|baseDir!>/elComandante/moduleDB/
 subserverDir: <!Directories|baseDir!>/elComandante/subserverDATA/
-dataDir: <!Directories|baseDir!>/ShareTestResults/elComandante
+#dataDir: <!Directories|baseDir!>/ShareTestResults/elComandante
+dataDir: <!Directories|baseDir!>/allTestResults/
 jumoDir: <!Directories|baseDir!>/elComandante/coolingBox/
 keithleyDir: <!Directories|baseDir!>/elComandante/keithleyClient/
 defaultParameters: <!Directories|baseDir!>/ShareTestResults/DefaultConfig
@@ -17,10 +18,10 @@ scriptDir: <!Directories|baseDir!>/elComandante/analysisClient/scripts/
 #TB3: DTB_WRMJGK
 
 #Test Stand 2
-TB0: WRMJGK
-TB1: WRBNTI
-TB2: WS6U7R
-TB3: WRPQJV
+TB0: DTB_WRMJGK
+TB1: DTB_WRBNTI
+TB2: DTB_WS6U7R
+TB3: DTB_WRPQJV
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
