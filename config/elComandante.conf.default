@@ -12,16 +12,16 @@ scriptDir: <!Directories|baseDir!>/elComandante/analysisClient/scripts/
 
 [TestboardAddress]
 #Test Stand 1
-#TB0: DTB_WRMJGK
-#TB1: DTB_WS6U7R
-#TB2: DTB_WRPQJV
-#TB3: DTB_WRMJGK
-
-#Test Stand 2
 TB0: DTB_WRMJGK
 TB1: DTB_WRBNTI
 TB2: DTB_WS6U7R
 TB3: DTB_WRPQJV
+
+#Test Stand 2
+#TB0: DTB_WRE6Z0
+#TB1: DTB_WREEXI
+#TB2: DTB_WRPPWX
+#TB3: DTB_WRE8QZ
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
