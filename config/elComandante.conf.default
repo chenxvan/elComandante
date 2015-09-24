@@ -25,7 +25,7 @@ TB3: DTB_WRE8QZ
 
 [defaultParameters]
 Roc: defaultParametersRocPSI46digV21
-Full: defaultParametersModule_TBM08b_V21respin
+Full: defaultParametersModule_TBM08c_V21respin
 
 [subsystem]
 Ziel: 127.0.0.1
