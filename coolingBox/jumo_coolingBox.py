@@ -212,7 +212,8 @@ class jumo_coolingBox(coolingBox):
             return
         if self.status == self.FINAL_HEATING:
             if temp > 27:
-                self.stop_controlling()
+                #self.stop_controlling()
+                pass
             log_message += 'Stop Controlling'
             sys.stdout.write('\r'+' '*self.buffer_length)
             sys.stdout.write(log_message)
@@ -224,8 +225,17 @@ class jumo_coolingBox(coolingBox):
             self.cooling()
             log_message += 'Cooling'
         elif self.setpoint - temp > self.deltaT_Max and abs( self.setpoint - temp) > self.deltaT_Max:
-            self.heating()
-            log_message += 'Heating'
+            #self.heating()
+            #log_message += 'Heating'
+
+            #active heating
+            if temp>0:
+                self.heating()
+                log_message += 'Heating (active)'
+            #pasive heating
+            else:
+                self.flushing()
+                log_message += 'Heating (passive)'
         log_message += '@ {setpoint:+5.1f} degC \t'.format(setpoint=self.setpoint)
 
         now = time.time()

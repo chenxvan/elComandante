@@ -129,11 +129,12 @@ class coolingBox_agente(el_agente.el_agente):
         # Cleanup after all tests have finished to return
         # everything to the state before the test
         #Heat Up again
-        #self.stabalizeTemperature(27)
-        self.sclient.send(self.subscription,":PROG:FINAL_HEAT\n")
-        self.log << "%s: Heating up ..." % self.agente_name
-        self.currentTest = "final_heating"
+        self.stabalizeTemperature(27)
         self.set_pending()
+        done=False
+        while not done: 
+            time.sleep(1)
+            done=self.check_finished()
         userQueries.query_any("Press ENTER after taking out the modules ", self.log)
         return False
 
