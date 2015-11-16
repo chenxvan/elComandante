@@ -113,7 +113,7 @@ def readCurrentIV():
     global client
     global keithley
     if keithley.getOutputStatus():
-	print 'measure IV'
+	#print 'measure IV'
         data= keithley.getAnswerForQuery(':READ?',69).split(' ')
         timestamp = time.time()
         if len(data)==5:
