@@ -13,9 +13,9 @@ scriptDir: <!Directories|baseDir!>/elComandante/analysisClient/scripts/
 [TestboardAddress]
 #Test Stand 1
 TB0: DTB_WRQ3EG
-TB1: DTB_WRE2WB
+TB1: DTB_WRQ43T
 TB2: DTB_WREEXI
-TB3: DTB_WRQ43T
+TB3: DTB_WRE2WB
 
 #Test Stand 2
 #TB0: DTB_WRMJGK
