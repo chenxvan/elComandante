@@ -86,7 +86,7 @@ command = VcalVsThresholdAnalysis --output analysis_VcalVsThreshold.root *VcalVs
 command = VcalCalibration --targets 17.49:22.16:32.19 --output VcalCalibration.root analysis_VcalVsThreshold.root analysis_XrayThresholdScanMo.root analysis_XrayThresholdScanAg.root analysis_XrayThresholdScanBa.root
 
 [Tests]
-TestDescription = ElComandanteTest
+TestDescription = MOREWEBTESTNAME
 Test = TESTS
 
 [OperationDetails]
