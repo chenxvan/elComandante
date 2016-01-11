@@ -135,7 +135,7 @@ class coolingBox_agente(el_agente.el_agente):
         while not done: 
             time.sleep(1)
             done=self.check_finished()
-        userQueries.query_any("Press ENTER after taking out the modules ", self.log)
+        userQueries.query_any("Press ENTER when instructed to do so by the twiki", self.log)
         return False
 
     def stabalizeTemperature(self,Temperature):
