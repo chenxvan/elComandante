@@ -3,3 +3,9 @@
 .project
 .cproject
 .pydevproject
+*.o
+*.pyc
+*.stderr
+*.stdout
+*.log
+*.a
