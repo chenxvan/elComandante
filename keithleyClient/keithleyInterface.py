@@ -31,7 +31,10 @@ class keithleyInterface:
             self.serial = serial.Serial(
                                         port=self.serialPortName,
                                         baudrate=57600, 
-                                        parity=serial.PARITY_NONE,
+                                        # Changed parity from NONE to ODD
+                                        # to match pXar defaults 
+                                        # parity=serial.PARITY_NONE,
+                                        parity=serial.PARITY_ODD,
                                         stopbits=serial.STOPBITS_ONE,
                                         bytesize=serial.EIGHTBITS,
                                         timeout=1,
