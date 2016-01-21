@@ -18,7 +18,7 @@ Logger = printer()
 Logger.set_name("CoolingBoxLog")
 #sweep parameters TODO anpassen
 
-defSerialPort = '/dev/ttyUSB0'
+defSerialPort = '/dev/ttyUSBJumo'
 serialPort = defSerialPort
 
 parser = argparse.ArgumentParser()
