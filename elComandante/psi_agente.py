@@ -63,7 +63,9 @@ class psi_agente(el_agente.el_agente):
         self.timestamp = timestamp
         if not self.active:
             return True
-        xtermParameters = "'PSI46master' +sb -sl 5000 -geometry 120x50+660+32 -fs 10 -fa 'Mono' -e"
+#        xtermParameters = "'PSI46master' +sb -sl 5000 -geometry 120x50+660+32 -fs 10 -fa 'Mono' -e"
+        # JAMIE - ADJUST XTERM WINDOW LOCATION
+        xtermParameters = "'PSI46master' +sb -sl 5000 -geometry 191x25+0+450 -fs 10 -fa 'Mono' -e"
         try:
             xtermParameters = self.conf.get('psiClient','xtermParameters')
         except:

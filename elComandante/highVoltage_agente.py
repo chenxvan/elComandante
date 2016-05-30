@@ -61,7 +61,9 @@ class highVoltage_agente(el_agente.el_agente):
         if not self.active:
             return True
  #       return True
-        command  = "xterm  -T 'HighVoltage' +sb -geometry 80x25+1200+1300 -fs 10 -fa 'Mono' -e "
+#        command  = "xterm  -T 'HighVoltage' +sb -geometry 80x25+1200+1300 -fs 10 -fa 'Mono' -e "
+        # JAMIE - ADJUST XTERM WINDOW LOCATION
+        command  = "xterm  -T 'HighVoltage' +sb -geometry 90x10+1200+0 -fs 10 -fa 'Mono' -e "
         command += "%s/keithleyClient.py "%(self.keithleyDir)
         command += "-d %s "%(self.keithleyPort)
         command += "-dir %s "%(self.logDir)

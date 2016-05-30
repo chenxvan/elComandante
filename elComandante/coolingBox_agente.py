@@ -52,7 +52,9 @@ class coolingBox_agente(el_agente.el_agente):
         # Start a client process
         if not self.active:
             return True
-        command  = "xterm -T 'CoolingBox' +sb -geometry 120x25+1200+0 -fs 10 -fa 'Mono' -e '"
+#        command  = "xterm -T 'CoolingBox' +sb -geometry 120x25+1200+0 -fs 10 -fa 'Mono' -e '"
+        # JAMIE - ADJUST XTERM WINDOW LOCATION
+        command  = "xterm -T 'CoolingBox' +sb -geometry 90x10+1200+230 -fs 10 -fa 'Mono' -e '"
         command += "%s/%s "%(self.programDir,self.programName)
         command += "-d %s "%self.port
         command += " -dir %s"%self.logDir
