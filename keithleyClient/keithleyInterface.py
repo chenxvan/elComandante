@@ -316,7 +316,12 @@ class keithleyInterface:
         if value <0.01 or value >10:
             raise Exception ('Current NPLC not valid: %s'%value)
         return self.write(':SENS:CURR:NPLC %s'%value)
-        
+
+    def setCurrentAutoRange(self,value):
+        if value != 'ON' and value != 'OFF':
+            raise Exception ('Current Auto Range not valid: %s'%value)
+        return self.write(':SOUR:CURR:RANG:AUTO %s'%value)
+
     def setImmidiateVoltage(self,value):
         if not self.validVoltage(value):
             raise Exception('immidiateVoltage not valid: %s'%value)
@@ -625,7 +630,8 @@ class keithleyInterface:
         self.setAverageFilterCount(3)
         self.setCurrentProtection(protection)
         self.setCurrentMeasurmentSpeed(10)
-        self.setCurrentMeasurmentRange(500e-6)
+        self.setCurrentMeasurmentRange(protection)
+        self.setCurrentAutoRange('OFF')
         self.setOutputDigits(7)
         self.setImmidiateVoltage(self.immidiateVoltage)
         self.clearErrorQueue()
