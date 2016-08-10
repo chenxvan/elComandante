@@ -32,7 +32,7 @@ Duration = 1200
 
 [Keithley]
 KeithleyUse = True
-BiasVoltage = -150
+BiasVoltage = BIASVOLTAGE
 
 [LowVoltage]
 LowVoltageUse = False
